@@ -2,6 +2,10 @@ import Item from './models/item'
 import CatalogSection from './components/CatalogSection.jsx'
 import {Fragment} from 'react'
 
+// buat tugas, ini cara import json
+// import {dogs} from "./dogs.json"
+
+
 /**
  * Sebuah komponen dengan nama App yang akan berisi Top Navigation Bar dan juga sebuah component descendant dengan nama `ContentSection`.
  * 
@@ -51,6 +55,21 @@ function App() {
       <div className="container">
         <CatalogSection items={itemList} />
       </div>
+
+
+
+      {/* ini buat tugas */}
+      {/* <div className="container">
+      <h2>Buat Tugas</h2>
+      {dogs.map((dog,index) => {
+        return(
+          <div key={index}>
+            <img src={dog.img} width={200} />
+            {dog.nama}
+          </div>
+          )
+      })}
+      </div> */}
     </Fragment>
   )
 }
