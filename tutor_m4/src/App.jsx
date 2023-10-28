@@ -22,7 +22,11 @@ function App() {
   const fetchDogs = async ()=>{
     setIsLoading(true) //terkadang react akan menampilkan error apabila kita mencoba akses state yang sifatnya null. Salah satu cara untuk menghindarinya adalah dengan menambahkan loading indicator.
 
-    const getDogs = await client.get("/breeds?limit=10")
+    const getDogs = await client.get("/breeds",{
+      params:{
+        limit:10
+      }
+    })
     setDogs(getDogs.data)
     setIsLoading(false)
   }
