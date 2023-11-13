@@ -7,6 +7,7 @@ import Detail from "./Detail";
 import List from "./List";
 import Error from "./Error";
 import dataHandler from './DataHandler';
+import DummyErrorPage from "./DummyErrorPage";
 
 /**
  * Pada materi minggu ini, kita akan belajar membuat router pada react.
@@ -42,6 +43,10 @@ const router = createBrowserRouter([
       {
         path: "/about", //Akses melalui base_url/about
         element: <div>Tutor M6 tentang react-router-dom</div>,
+      },
+      {
+        path: "/dummy", //coba throw error
+        element: <DummyErrorPage/>,
       },
       {
         path: "/items", //Akses melalui base_url/items
