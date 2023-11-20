@@ -114,16 +114,16 @@ db.customers.find({ $and: [
  */
 
 db.customers.updateOne({
-    email: 'Kevin'
+    email: 'cherilyn@example.com'
 },{ $set: {
     age: 21
 } })
 
 db.customers.updateMany({
-    name: { $in: ['Mikhael', 'Kevin'] }
+    name: { $in: ['Enrico', 'Cherilyn'] }
 },{
     $set: {
-        age: 22
+        age: 20
     }
 })
 
