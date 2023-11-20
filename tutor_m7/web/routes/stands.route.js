@@ -31,10 +31,10 @@ router.get('/:id/catalog', async (req, res) => {
 })
 
 router.post('/', async (req, res) => {
-    const { name, owner, items } = req.body;
-    const arrItems = items.split(',')
+    let { name, owner, items } = req.body;
+    if(!Array.isArray(items)) items = items.split(',')
     const newStand = new Stand({
-        name, owner, items: arrItems
+        name, owner, items
     })
     const result = await newStand.save()
     return res.status(201).json(result)
@@ -42,13 +42,13 @@ router.post('/', async (req, res) => {
 
 router.put('/:id', async (req, res) => {
     const { id } = req.params;
-    const { name, owner, items } = req.body
-    const arrItems = items.split(',')
+    let { name, owner, items } = req.body
+    if(!Array.isArray(items)) items = items.split(',')
     let result = await Stand.updateOne({
         _id: id
     },{
         $set: {
-            name, owner, items: arrItems
+            name, owner, items
         }
     });
     if(result.modifiedCount == 0){
